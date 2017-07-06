@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pair_programming:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="room705a-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="pair_programming:war exploded" />
+    </root>
+  </artifact>
+</component>
