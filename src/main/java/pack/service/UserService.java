@@ -1,13 +1,14 @@
 package pack.service;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
 import pack.entity.User;
 
 import java.util.List;
 
 
-public interface UserService {
+public interface UserService extends UserDetailsService{
 
-    void save(String userName);
+    void save(User user);
 
     User findOne(int id);
 

@@ -43,7 +43,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             return provider;
         }
 
-
         public InMemoryUserDetailsManagerConfigurer<AuthenticationManagerBuilder> inMemory(){
             return new InMemoryUserDetailsManagerConfigurer<AuthenticationManagerBuilder>();
         }
