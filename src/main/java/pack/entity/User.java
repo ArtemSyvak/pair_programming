@@ -19,7 +19,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(unique = true)
-    private String userName;
+    private String username;
     private String password;
     private String email;
     public boolean accountNonExpired = true;
@@ -28,6 +28,8 @@ public class User {
     public boolean enabled = true;
     @Enumerated(EnumType.STRING)
     private Role role = Role.ROLE_USER;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Product> product = new ArrayList<Product>();
 
     public void setAccountNonExpired(boolean accountNonExpired) {
         this.accountNonExpired = accountNonExpired;
@@ -70,8 +72,8 @@ public class User {
 
 
 
-    public User(String userName, String password, String email) {
-        this.userName = userName;
+    public User(String username, String password, String email) {
+        this.username = username;
         this.password = password;
         this.email = email;
     }
@@ -85,26 +87,25 @@ public class User {
         this.email = email;
     }
 
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-//    private List<Product> product = new ArrayList<Product>();
+
 
 
     public User(){
 
     }
 
-    public User(String userName) {
+    public User(String username) {
 
     }
 
-//    public User(String userName, String password, List<Product> product) {
-//        this.userName = userName;
-//        this.password = password;
-//        this.product = product;
-//    }
+    public User(String username, String password, List<Product> product) {
+        this.username = username;
+        this.password = password;
+        this.product = product;
+    }
 
-    public User(String userName, String password) {
-        this.userName = userName;
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
@@ -116,12 +117,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -132,20 +133,20 @@ public class User {
         this.password = password;
     }
 
-//    public List<Product> getProduct() {
-//        return product;
-//    }
-//
-//    public void setProduct(List<Product> product) {
-//        this.product = product;
-//    }
+    public List<Product> getProduct() {
+        return product;
+    }
+
+    public void setProduct(List<Product> product) {
+        this.product = product;
+    }
 
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';

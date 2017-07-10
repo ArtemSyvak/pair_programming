@@ -7,7 +7,6 @@
 --%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,27 +15,28 @@
 </head>
 <body>
 
-    index
-    <a href="/catalog">catalog_azaza</a>
-
-    <a href="/login">Log In</a>
+    Welcome in our shop!!
+    <hr>
 
 
-
-    <sf:form modelAttribute="user" action="loginAction" method="post" >
+    <sf:form modelAttribute="user" action="addUserWithProduct" method="post" >
         Username
-        <sf:input path="userName"></sf:input>
+        <sf:input path="username"></sf:input>
         <br>
         Password
         <sf:password path="password"></sf:password>
         <br>
         Email
         <sf:input path="email"></sf:input>
+        <br>
+        Product
+        <sf:input path="product"></sf:input>
+
         <input type="submit">
     </sf:form>
     <br>
 
-    <h1><a href="addProduct">Add product</a></h1>
+    <h1><a href="cart">MyCart</a></h1>
 
 
 
