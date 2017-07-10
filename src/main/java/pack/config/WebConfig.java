@@ -32,14 +32,10 @@ public class WebConfig  extends WebMvcConfigurerAdapter{
                 .addResourceHandler("/marker/**")
                 .addResourceLocations("/styles/");
 
-        //// Путь
-//        registry
-//                .addResourceHandler("/img/**")
-//                .addResourceLocations("file:" +
-//                        System.getProperty("user.home") +
-//                        File.separator +
-//                        "images" +
-//                        File.separator);
+        // Путь
+        registry
+                .addResourceHandler("/img/**")
+                .addResourceLocations("/images/");
 
     }
 

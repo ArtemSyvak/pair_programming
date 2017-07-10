@@ -33,6 +33,13 @@ public class UserServiceImpl implements UserService {
         return userDAO.findAll();
     }
 
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userDAO.findByUsername(username);
+        if(user == null){
+            throw new UsernameNotFoundException("username: " + username + " not found!");
+        }
+        return user;
+    }
 
 
 }
