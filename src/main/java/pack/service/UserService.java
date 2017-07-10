@@ -2,17 +2,18 @@ package pack.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 import pack.dao.UserDAO;
 import pack.entity.User;
 
 import java.util.List;
 
+@Service
+public interface UserService extends UserDetailsService {
 
-public interface UserService  {
 
 
-
-    void save(String userName);
+    void save(String username);
 
     void save(User user);
 

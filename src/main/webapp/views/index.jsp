@@ -25,7 +25,7 @@
 
     <sf:form modelAttribute="user" action="loginAction" method="post" >
         Username
-        <sf:input path="userName"></sf:input>
+        <sf:input path="username"></sf:input>
         <br>
         Password
         <sf:password path="password"></sf:password>
